@@ -3,12 +3,15 @@ export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
+      backgroundImage: {
+        "bg-About": "url('images/portfolio1.png')"
+      },
       fontFamily: {
         'Geist': ['"AR One Sans"', 'sans-serif'],
       },
       colors: {
-        'color-text1': '#18181B',
-        'color-text2': '#71717A',
+        'color1': '#F9FAFB',
+        'color2': '#71717A',
       },
     },
   },
