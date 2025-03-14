@@ -12,6 +12,7 @@ export default {
       colors: {
         'color1': '#F9FAFB',
         'color2': '#71717A',
+        'color-blue': '#0A1D7D'
       },
     },
   },
