@@ -1,42 +1,324 @@
-<section id="AboutMe" class="flex items-center h-screen py-12 md:py-24 lg:py-32 bg-muted/50 ">
-    <div class="flex px-4 md:px-6 text-color1">
-      <div class="grid gap-6 lg:grid-cols-2 lg:gap-12">
-        <div class="flex justify-center">
-          <div class="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] overflow-hidden rounded-full border-4 border-primary">
-            <img src="images/photo-profile.png" alt="">
-          </div>
+
+<section id="AboutMe" class="text-color1 py-24 md:py-32 relative overflow-hidden">
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 relative">
+        <div class="absolute -top-10 -left-10 w-20 h-20 bg-navyBlue/10 rounded-full blur-xl"></div>
+        <h2 class="text-4xl md:text-5xl font-bold text-lightText inline-block relative">
+          Sobre <span class="text-color-blue">Mí</span>
+          <div class="h-1 w-full bg-gradient-to-r from-navyBlue to-transparent mt-2"></div>
+        </h2>
+      </div>
+
+      <!-- Tabs de navegación -->
+      <div class="tabs-container">
+        <div class="flex border-b border-grayGreen/20 mb-8">
+          <button
+            class="tab-button px-6 py-3 font-medium transition-colors relative text-lightText"
+            data-tab="proyecto"
+          >
+            Mi Proyecto
+            <div class="active-indicator absolute bottom-0 left-0 right-0 h-0.5 bg-navyBlue"></div>
+          </button>
+          <button
+            class="tab-button px-6 py-3 font-medium transition-colors relative text-lightText/60 hover:text-lightText/80"
+            data-tab="habilidades"
+          >
+            Mis Habilidades
+          </button>
         </div>
-        <div class="space-y-4">
-          <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Sobre Mí</h2>
-          <p class="text-muted-foreground md:text-xl">
-            Soy un desarrollador web apasionado por crear experiencias digitales atractivas y funcionales. Con
-            experiencia en tecnologías frontend y backend, me especializo en construir aplicaciones web modernas y
-            responsivas.
-          </p>
-          <p class="text-muted-foreground md:text-xl">
-            Cuando no estoy codificando, disfruto de la fotografía, viajar y aprender nuevas tecnologías para mejorar
-            mis habilidades.
-          </p>
-          <div class="space-y-2">
-            <h3 class="text-xl font-bold">Mis Habilidades</h3>
-            <div class="flex flex-wrap gap-2">
-              <div class="flex gap-2 rounded-full bg-color-blue px-3 py-1 text-sm text-primary">
-                <span class="">HTML</span>
-                <a href=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 48 48">
-                  <path fill="#0277BD" d="M24.047,5c-1.555,0.005-2.633,0.142-3.936,0.367c-3.848,0.67-4.549,2.077-4.549,4.67V14h9v2H15.22h-4.35c-2.636,0-4.943,1.242-5.674,4.219c-0.826,3.417-0.863,5.557,0,9.125C5.851,32.005,7.294,34,9.931,34h3.632v-5.104c0-2.966,2.686-5.896,5.764-5.896h7.236c2.523,0,5-1.862,5-4.377v-8.586c0-2.439-1.759-4.263-4.218-4.672C27.406,5.359,25.589,4.994,24.047,5z M19.063,9c0.821,0,1.5,0.677,1.5,1.502c0,0.833-0.679,1.498-1.5,1.498c-0.837,0-1.5-0.664-1.5-1.498C17.563,9.68,18.226,9,19.063,9z"></path><path fill="#FFC107" d="M23.078,43c1.555-0.005,2.633-0.142,3.936-0.367c3.848-0.67,4.549-2.077,4.549-4.67V34h-9v-2h9.343h4.35c2.636,0,4.943-1.242,5.674-4.219c0.826-3.417,0.863-5.557,0-9.125C41.274,15.995,39.831,14,37.194,14h-3.632v5.104c0,2.966-2.686,5.896-5.764,5.896h-7.236c-2.523,0-5,1.862-5,4.377v8.586c0,2.439,1.759,4.263,4.218,4.672C19.719,42.641,21.536,43.006,23.078,43z M28.063,39c-0.821,0-1.5-0.677-1.5-1.502c0-0.833,0.679-1.498,1.5-1.498c0.837,0,1.5,0.664,1.5,1.498C29.563,38.32,28.899,39,28.063,39z"></path>
-                  </svg></a>
+
+        <!-- Contenido de las tabs -->
+        <div class="min-h-[400px]">
+          <!-- Tab de Proyecto -->
+          <div class="tab-content space-y-8" data-content="proyecto">
+            <div class="bg-darkBg/30 backdrop-blur-sm rounded-xl p-6 border border-grayGreen/10">
+              <h3 class="text-2xl font-bold text-navyBlue mb-4">PostApp</h3>
+              <p class="text-lightText/80 mb-6 leading-relaxed">
+                Una aplicación de redes sociales moderna que permite a los usuarios compartir publicaciones, interactuar con contenido y conectarse con otros usuarios en tiempo real.
+              </p>
+              
+              <div class="mb-6">
+                <h4 class="text-lg font-semibold text-lightText mb-3">Características Principales</h4>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <li class="flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navyBlue flex-shrink-0 mt-0.5">
+                      <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                    <span class="text-lightText/80">Autenticación de usuarios con múltiples proveedores</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navyBlue flex-shrink-0 mt-0.5">
+                      <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                    <span class="text-lightText/80">Creación y edición de publicaciones con soporte multimedia</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navyBlue flex-shrink-0 mt-0.5">
+                      <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                    <span class="text-lightText/80">Sistema de comentarios y reacciones en tiempo real</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navyBlue flex-shrink-0 mt-0.5">
+                      <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                    <span class="text-lightText/80">Notificaciones push y alertas personalizadas</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navyBlue flex-shrink-0 mt-0.5">
+                      <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                    <span class="text-lightText/80">Perfiles de usuario personalizables</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navyBlue flex-shrink-0 mt-0.5">
+                      <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                    <span class="text-lightText/80">Búsqueda avanzada de contenido y usuarios</span>
+                  </li>
+                </ul>
               </div>
-              <div>
-                <span class="rounded-full  bg-color-blue px-3 py-1 text-sm text-primary">CSS</span>
+              
+              <div class="mb-6">
+                <h4 class="text-lg font-semibold text-lightText mb-3">Stack Tecnológico</h4>
+                <div class="space-y-3">
+                  <div class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navyBlue flex-shrink-0 mt-0.5">
+                      <path d="m18 16-6-12-6 12"></path>
+                      <path d="M6 16h12"></path>
+                    </svg>
+                    <div>
+                      <span class="font-medium text-lightText">Frontend:</span>
+                      <span class="text-lightText/80 ml-2">React, Next.js, Tailwind CSS, Framer Motion</span>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navyBlue flex-shrink-0 mt-0.5">
+                      <rect width="20" height="8" x="2" y="2" rx="2"></rect>
+                      <rect width="20" height="8" x="2" y="14" rx="2"></rect>
+                      <line x1="6" x2="6" y1="6" y2="6"></line>
+                      <line x1="6" x2="6" y1="18" y2="18"></line>
+                    </svg>
+                    <div>
+                      <span class="font-medium text-lightText">Backend:</span>
+                      <span class="text-lightText/80 ml-2">Node.js, Express, TypeScript, Socket.io</span>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navyBlue flex-shrink-0 mt-0.5">
+                      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                    </svg>
+                    <div>
+                      <span class="font-medium text-lightText">Base de Datos:</span>
+                      <span class="text-lightText/80 ml-2">MongoDB, Redis para caché</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <span class="rounded-full  bg-color-blue p3 py-1 text-sm text-primary">React</span>
-              <span class="rounded-full  bg-color-blue px-3 py-1 tx-3 text-sm text-primary">JavaScript</span>
-              <span class="rounded-full  bg-color-blue px-ext-sm text-primary">Next.js</span>
-              <span class="rounded-full  bg-color-blue px-3 py-1 text-sm text-primary">Tailwind CSS</span>
-              <span class="rounded-full  bg-color-blue px-3 py-1 text-sm text-primary">Node.js</span>
+              
+              <div class="flex flex-wrap gap-4">
+                <a 
+                  href="#" 
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-navyBlue hover:bg-navyBlue/90 text-lightText transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" x2="21" y1="14" y2="3"></line>
+                  </svg>
+                  Ver Demo
+                </a>
+                <a 
+                  href="#" 
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-navyBlue text-navyBlue hover:bg-navyBlue/10 transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                  </svg>
+                  Ver Código
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tab de Habilidades -->
+          <div class="tab-content space-y-12 hidden" data-content="habilidades">
+            <!-- Frontend -->
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navyBlue">
+                  <path d="m18 16-6-12-6 12"></path>
+                  <path d="M6 16h12"></path>
+                </svg>
+                <h3 class="text-xl font-semibold text-lightText">Frontend</h3>
+                <div class="h-[1px] flex-grow bg-gradient-to-r from-navyBlue/30 to-transparent"></div>
+              </div>
+              
+              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <div class="bg-darkBg/30 backdrop-blur-sm rounded-lg p-3 border border-grayGreen/10 hover:border-navyBlue/30 transition-all duration-300 flex items-center gap-3">
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-6 h-6 object-contain" />
+                  </div>
+                  <span class="text-lightText/80">HTML</span>
+                </div>
+                <div class="bg-darkBg/30 backdrop-blur-sm rounded-lg p-3 border border-grayGreen/10 hover:border-navyBlue/30 transition-all duration-300 flex items-center gap-3">
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="w-6 h-6 object-contain" />
+                  </div>
+                  <span class="text-lightText/80">CSS</span>
+                </div>
+                <div class="bg-darkBg/30 backdrop-blur-sm rounded-lg p-3 border border-grayGreen/10 hover:border-navyBlue/30 transition-all duration-300 flex items-center gap-3">
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-6 h-6 object-contain" />
+                  </div>
+                  <span class="text-lightText/80">JavaScript</span>
+                </div>
+                <div class="bg-darkBg/30 backdrop-blur-sm rounded-lg p-3 border border-grayGreen/10 hover:border-navyBlue/30 transition-all duration-300 flex items-center gap-3">
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-6 h-6 object-contain" />
+                  </div>
+                  <span class="text-lightText/80">React</span>
+                </div>
+                <div class="bg-darkBg/30 backdrop-blur-sm rounded-lg p-3 border border-grayGreen/10 hover:border-navyBlue/30 transition-all duration-300 flex items-center gap-3">
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="w-6 h-6 object-contain" />
+                  </div>
+                  <span class="text-lightText/80">Next.js</span>
+                </div>
+                <div class="bg-darkBg/30 backdrop-blur-sm rounded-lg p-3 border border-grayGreen/10 hover:border-navyBlue/30 transition-all duration-300 flex items-center gap-3">
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind" class="w-6 h-6 object-contain" />
+                  </div>
+                  <span class="text-lightText/80">Tailwind</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Backend -->
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navyBlue">
+                  <rect width="20" height="8" x="2" y="2" rx="2"></rect>
+                  <rect width="20" height="8" x="2" y="14" rx="2"></rect>
+                  <line x1="6" x2="6" y1="6" y2="6"></line>
+                  <line x1="6" x2="6" y1="18" y2="18"></line>
+                  y2="6"</line>
+                  <line x1="6" x2="6" y1="18" y2="18"></line>
+                </svg>
+                <h3 class="text-xl font-semibold text-lightText">Backend</h3>
+                <div class="h-[1px] flex-grow bg-gradient-to-r from-navyBlue/30 to-transparent"></div>
+              </div>
+              
+              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <div class="bg-darkBg/30 backdrop-blur-sm rounded-lg p-3 border border-grayGreen/10 hover:border-navyBlue/30 transition-all duration-300 flex items-center gap-3">
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-6 h-6 object-contain" />
+                  </div>
+                  <span class="text-lightText/80">Node.js</span>
+                </div>
+                <div class="bg-darkBg/30 backdrop-blur-sm rounded-lg p-3 border border-grayGreen/10 hover:border-navyBlue/30 transition-all duration-300 flex items-center gap-3">
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" class="w-6 h-6 object-contain" />
+                  </div>
+                  <span class="text-lightText/80">Express</span>
+                </div>
+                <div class="bg-darkBg/30 backdrop-blur-sm rounded-lg p-3 border border-grayGreen/10 hover:border-navyBlue/30 transition-all duration-300 flex items-center gap-3">
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="w-6 h-6 object-contain" />
+                  </div>
+                  <span class="text-lightText/80">TypeScript</span>
+                </div>
+                <div class="bg-darkBg/30 backdrop-blur-sm rounded-lg p-3 border border-grayGreen/10 hover:border-navyBlue/30 transition-all duration-300 flex items-center gap-3">
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-6 h-6 object-contain" />
+                  </div>
+                  <span class="text-lightText/80">Python</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Base de Datos -->
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navyBlue">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+                <h3 class="text-xl font-semibold text-lightText">Base de Datos</h3>
+                <div class="h-[1px] flex-grow bg-gradient-to-r from-navyBlue/30 to-transparent"></div>
+              </div>
+              
+              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <div class="bg-darkBg/30 backdrop-blur-sm rounded-lg p-3 border border-grayGreen/10 hover:border-navyBlue/30 transition-all duration-300 flex items-center gap-3">
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="w-6 h-6 object-contain" />
+                  </div>
+                  <span class="text-lightText/80">MongoDB</span>
+                </div>
+                <div class="bg-darkBg/30 backdrop-blur-sm rounded-lg p-3 border border-grayGreen/10 hover:border-navyBlue/30 transition-all duration-300 flex items-center gap-3">
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="w-6 h-6 object-contain" />
+                  </div>
+                  <span class="text-lightText/80">MySQL</span>
+                </div>
+                <div class="bg-darkBg/30 backdrop-blur-sm rounded-lg p-3 border border-grayGreen/10 hover:border-navyBlue/30 transition-all duration-300 flex items-center gap-3">
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="w-6 h-6 object-contain" />
+                  </div>
+                  <span class="text-lightText/80">PostgreSQL</span>
+                </div>
+                <div class="bg-darkBg/30 backdrop-blur-sm rounded-lg p-3 border border-grayGreen/10 hover:border-navyBlue/30 transition-all duration-300 flex items-center gap-3">
+                  <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" class="w-6 h-6 object-contain" />
+                  </div>
+                  <span class="text-lightText/80">Firebase</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<script>
+  // Manejo de las tabs
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const activeIndicators = document.querySelectorAll('.active-indicator');
+    
+    // Inicializar - mostrar la primera tab
+    tabContents[0].classList.remove('hidden');
+    activeIndicators[0].classList.remove('hidden');
+    
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tabName = button.getAttribute('data-tab');
+        
+        // Ocultar todos los contenidos y resetear botones
+        tabContents.forEach(content => {
+          content.classList.add('hidden');
+        });
+        
+        tabButtons.forEach(btn => {
+          btn.classList.remove('text-lightText');
+          btn.classList.add('text-lightText/60');
+          btn.querySelector('.active-indicator')?.classList.add('hidden');
+        });
+        
+        // Mostrar el contenido seleccionado y activar botón
+        document.querySelector(`.tab-content[data-content="${tabName}"]`).classList.remove('hidden');
+        button.classList.remove('text-lightText/60');
+        button.classList.add('text-lightText');
+        button.querySelector('.active-indicator')?.classList.remove('hidden');
+      });
+    });
+  });
+</script>
