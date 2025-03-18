@@ -19,7 +19,7 @@ export default {
       colors: {
         'color1': '#e7e7e9',
         'color2': '#71717A',
-        'color-blue': '#0A1D7D'
+        'color-blue': '#122191'
       },
     },
   },
