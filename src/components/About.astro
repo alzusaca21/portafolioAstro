@@ -1,0 +1,121 @@
+---
+import { ExternalLink, Terminal, ChevronRight } from 'lucide-react';
+
+const infoProyect = {
+  title: "PostApp",
+  description: "Aplicación de redes sociales que permite a los usuarios compartir publicaciones, interactuar con contenido y conectarse con otros usuarios.",
+  image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2074&auto=format&fit=crop",
+  technologies: [
+    "React", 
+    "React-Router",
+    "Axios", 
+    "Socket.io-client",
+    "TailwindCSS",
+    "React-Toastify",
+    "React-Modal",
+    "React-Icons", 
+    "React-Spinners",
+    "Vite", 
+    "ESLint",
+    "PostCSS"
+  ],
+  codeUrl: "https://github.com/wasupalonely/posts_app_frontend",
+  features: [
+    "Autenticación de usuarios",
+    "Creación y edición de publicaciones",
+    "Sistema de likes y comentarios",
+    "Perfiles personalizables",
+    "Modo oscuro/claro"
+  ]
+}
+---
+
+<div class="max-w-6xl mx-auto text-color1">
+  <!----Título de sección---->
+  <div class="mb-16 text-center animate-item">
+    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+      Rincón de <span class="text-color-blue">Desarrollo</span>
+    </h2>
+    <div class="h-1 w-full bg-gradient-to-r from-navyBlue to-transparent mt-2">
+    </div>
+  </div>
+
+  <!-- Proyecto destacado -->
+  <div class="mb-20 animate-item">
+    <div
+      class="relative transform-gpu hover:rotate-y-5 transition-transform duration-700 group"
+    >
+      <div
+        class="relative bg-darkBg/40 backdrop-blur-md rounded-2xl overflow-hidden border border-grayGreen/10 shadow-xl"
+      >
+        <!---- Header del proyecto ---->
+        <div class="relative h-64 md:h-80 overflow-hidden rounded-t-2xl">
+          <img
+            src="../images/portfolio1.png"
+            alt={infoProyect.title}
+            class="object-cover opacity-40 w-full h-full transition-transform duration-700 transform-gpu group-hover:scale-105"
+          />
+          <!-- Fondo degradado -->
+          <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/70 to-transparent"></div>
+        
+          <!-- Título y descripción del proyecto -->
+          <div class="absolute bottom-0 left-0 p-6 flex items-center gap-3 z-10">
+            <!-- Icono -->
+            <div class="w-10 h-10 flex items-center justify-center bg-[#0D1117] rounded-lg">
+              <svg fill="#122191" width="30px" height="30px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g fill-rule="evenodd"> <path d="M0 176.142 176.13.012l960.12 960.119L176.13 1920 0 1743.87l783.864-783.739L0 176.142Z"></path> <path d="M784 176.142 960.13.012l960.12 960.119L960.13 1920 784 1743.87l783.86-783.739L784 176.142Z"></path> </g> </g></svg>
+            </div>
+            <!-- Texto -->
+            <div>
+              <h3 class="text-2xl font-extrabold text-white">{infoProyect.title}</h3>
+              <p class="text-white text-sm">Proyecto Destacado</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenido -->
+        <div class="flex flex-col md:flex-row gap-6 p-8">
+          <div>
+            <h4 class="text-2xl font-bold mb-4 border-b-2 border-blue-900 w-max pb-1">
+              Descripción
+            </h4>
+            <p class="text-lightText/80 mb-6">{infoProyect.description}</p>
+
+            <!-- Características -->
+            <h4 class="text-2xl font-bold mb-4 border-b-2 border-blue-900 w-max pb-1">
+              Características
+            </h4>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
+                {infoProyect.features.map((feature) => (
+                  <li class="flex items-center gap-2 text-bas text-lightText/80">
+                    <svg class="fill-color-blue" width="15px" height="20px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M568.13.012 392 176.142l783.864 783.989L392 1743.87 568.13 1920l960.118-959.87z" fill-rule="evenodd"></path> </g></svg>
+                    <span>{feature}</span> 
+                  </li>
+                ))}
+              </ul>
+            </div>
+          <!-- Tecnologías -->
+          <div>
+            <h4 class="text-2xl font-bold mb-4 border-b-2 border-blue-900 w-max pb-1">
+              Tecnologías
+            </h4>
+            <div class="flex flex-wrap gap-2 mb-8">
+              {infoProyect.technologies.map((technologie) => (
+                  <span class="px-3 py-1.5 bg-navyBlue/10 text-lightText/90 text-base rounded-full border border-blue-900">{technologie}</span> 
+              ))}
+            </div>
+
+            <!-- Enlaces -->
+            <div class="flex justify-center sm:block items-center">
+              <a
+                href="https://github.com/wasupalonely/posts_app_frontend"
+                class="flex gap-2 py-2.5 px-4 bg-gray-800 text-lightText rounded-lg hover:bg-gray-700 transition-colors"
+              >
+                Ver Código
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
