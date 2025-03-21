@@ -1,3 +1,6 @@
+# info
+Proyecto de portafolio usando mis conocimientos en astro y tailwind
+
 # Astro Starter Kit: Basics
 
 ```sh
