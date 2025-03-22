@@ -10,9 +10,6 @@ export default {
       },
     },
     extend: {
-      backgroundImage: {
-        "bg-About": "url('images/portfolio1.png')"
-      },
       fontFamily: {
         'Geist': ['"Big Shoulders"', 'sans-serif'],
       },
