@@ -64,50 +64,50 @@
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
-    const contactForm = document.getElementById("contactForm");
+  const contactForm = document.getElementById("contactForm");
+  const messageContainer = document.createElement("p");
+  messageContainer.className = "mt-4 text-lg font-semibold";
+  contactForm.appendChild(messageContainer);
 
-    if (!contactForm) {
-      console.error("❌ No se encontró el formulario de contacto.");
-      return;
+  contactForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const msgInput = document.getElementById("message"); // Renombrado para evitar conflictos
+
+    const formData = {
+      name: nameInput.value.trim(),
+      email: emailInput.value.trim(),
+      msg: msgInput.value.trim(), // Cambia "message" a "msg"
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      console.log(result); // Verifica la respuesta en la consola
+
+      if (response.ok) {
+        messageContainer.innerHTML = "Mensaje Enviado<br>Nos pondremos en contacto";;
+        messageContainer.classList.add("text-green-500");
+        contactForm.reset();
+      } else {
+        messageContainer.textContent = "❌ " + result.error;
+        messageContainer.classList.add("text-red-500");
+      }
+    } catch (error) {
+      messageContainer.textContent = "❌ Error en la conexión. Inténtalo nuevamente.";
+      messageContainer.classList.add("text-red-500");
     }
-
-    contactForm.addEventListener("submit", async function (event) {
-      event.preventDefault();
-
-      const nameInput = document.getElementById("name");
-      const emailInput = document.getElementById("email");
-      const messageInput = document.getElementById("message");
-
-      if (!nameInput || !emailInput || !messageInput) {
-        alert("❌ Error: No se encontraron los campos del formulario.");
-        return;
-      }
-
-      const formData = {
-        name: nameInput.value.trim(),
-        email: emailInput.value.trim(),
-        message: messageInput.value.trim(),
-      };
-
-      try {
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        });
-
-        const result = await response.json();
-
-        if (response.ok) {
-          alert("✅ Mensaje enviado con éxito 🎉");
-          contactForm.reset();
-        } else {
-          alert("❌ Error al enviar el mensaje: " + result.error);
-        }
-      } catch (error) {
-        alert("❌ Error en la conexión. Inténtalo nuevamente.");
-      }
+    setTimeout(() => {
+        messageContainer.textContent = ""; 
+      }, 3000); 
     });
-  });
+  });     
 </script>
 
