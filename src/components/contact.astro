@@ -1,3 +1,4 @@
+
 <section id="contacto" class="py-24 md:py-32 text-color1">
   <div class="container mx-auto px-6">
     <div class="max-w-2xl mx-auto text-center">
@@ -6,12 +7,13 @@
         ¿Tienes una pregunta o propuesta, o simplemente quieres saludar? Adelante.
       </p>
 
-      <form class="space-y-12">
+      <form id="contactForm" class="space-y-12">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="space-y-2">
             <label class="block text-sm text-grayGreen mb-1 text-left">Tu Nombre</label>
             <input
               type="text"
+              id="name"
               name="name"
               value=""
               required
@@ -24,8 +26,8 @@
             <label class="block text-sm text-grayGreen mb-1 text-left">Email</label>
             <input
               type="email"
+              id="email"
               name="email"
-              value=""
               required
               class="w-full bg-transparent border-b-2 border-grayGreen/30 focus:border-color-blue outline-none py-2 text-lightText transition-colors"
               placeholder="Escribe tu email"
@@ -37,7 +39,7 @@
           <label class="block text-sm text-grayGreen mb-1 text-left">Tu Mensaje</label>
           <textarea
             name="message"
-            value="jha"
+            id="message"
             required
             rows={4}
             class="w-full bg-transparent border-b-2 border-grayGreen/30 focus:border-color-blue outline-none py-2 transition-colors resize-none"
@@ -59,3 +61,53 @@
   </div>
 </section>
 )
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const contactForm = document.getElementById("contactForm");
+
+    if (!contactForm) {
+      console.error("❌ No se encontró el formulario de contacto.");
+      return;
+    }
+
+    contactForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const messageInput = document.getElementById("message");
+
+      if (!nameInput || !emailInput || !messageInput) {
+        alert("❌ Error: No se encontraron los campos del formulario.");
+        return;
+      }
+
+      const formData = {
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        message: messageInput.value.trim(),
+      };
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          alert("✅ Mensaje enviado con éxito 🎉");
+          contactForm.reset();
+        } else {
+          alert("❌ Error al enviar el mensaje: " + result.error);
+        }
+      } catch (error) {
+        alert("❌ Error en la conexión. Inténtalo nuevamente.");
+      }
+    });
+  });
+</script>
+
